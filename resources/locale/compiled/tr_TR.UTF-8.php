@@ -14,8 +14,8 @@ Language-Team: Turkish
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-POT-Creation-Date: 2022-02-15T23:07:32+00:00
-PO-Revision-Date: 2022-02-18 18:15
+POT-Creation-Date: 2022-03-08T23:02:55+00:00
+PO-Revision-Date: 2022-03-08 23:03
 Language: tr_TR
 Plural-Forms: nplurals=2; plural=(n != 1);
 X-Crowdin-Project: azuracast
@@ -52,10 +52,6 @@ X-Crowdin-File-ID: 4
       '%s is not recognized as a service.' => 
       array (
         0 => '%s bir servis olarak tanınmıyor.',
-      ),
-      '%s of %s Used' => 
-      array (
-        0 => 'Kullanılan Alan: %s / %s',
       ),
       '%{ days } Days' => 
       array (
@@ -116,10 +112,6 @@ X-Crowdin-File-ID: 4
       '(in seconds)' => 
       array (
         0 => '(saniye içinde)',
-      ),
-      '15-Minute Average' => 
-      array (
-        0 => '15-Dakikalık Ortalama',
       ),
       'A completely random track is picked for playback every time the queue is populated.' => 
       array (
@@ -191,7 +183,7 @@ X-Crowdin-File-ID: 4
       ),
       'Adapter' => 
       array (
-        0 => 'Adaptör',
+        0 => 'Klasör Konumu',
       ),
       'Add API Key' => 
       array (
@@ -291,7 +283,7 @@ X-Crowdin-File-ID: 4
       ),
       'Administer Storage Locations' => 
       array (
-        0 => 'Depolama Konumlarını Yönet',
+        0 => 'Depolama Yönetimi',
       ),
       'Administration' => 
       array (
@@ -452,6 +444,10 @@ X-Crowdin-File-ID: 4
       'Attempt to Automatically Retrieve ISRC When Missing' => 
       array (
         0 => 'Eksik Olduğunda ISRC\'yi Otomatik Olarak Almayı Dene',
+      ),
+      'Audio transcoding applications like Liquidsoap use a consistent amount of CPU over time, which gradually drains this available credit. If you regularly see stolen CPU time, you should consider migrating to a VM that has CPU resources dedicated to your instance.' => 
+      array (
+        0 => 'Liquidsoap gibi ses kod dönüştürme uygulamaları zaman içinde tutarlı miktarda CPU kullanır ve bu mevcut işlemleri kademeli olarak boşaltır. Düzenli olarak CPU zamanının fazla kullanımını görüyorsanız size ayrılmış CPU kaynaklarına sahip bir sanal makineye geçiş yapmayı düşünmelisiniz.',
       ),
       'Audit Log' => 
       array (
@@ -649,6 +645,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Yedekleme',
       ),
+      'Balanced' => 
+      array (
+        0 => 'Dengeli',
+      ),
       'Band' => 
       array (
         0 => 'Grup',
@@ -663,7 +663,7 @@ X-Crowdin-File-ID: 4
       ),
       'Banned User Agents' => 
       array (
-        0 => '',
+        0 => 'Yasaklanmış Tarayıcılar',
       ),
       'Base Station Directory' => 
       array (
@@ -744,6 +744,14 @@ X-Crowdin-File-ID: 4
       'CPU Load' => 
       array (
         0 => 'CPU Yükü',
+      ),
+      'CPU Stats Help' => 
+      array (
+        0 => 'CPU İstatistikleri Yardımı',
+      ),
+      'Cached' => 
+      array (
+        0 => 'Önbelleğe Alınmış',
       ),
       'Categories' => 
       array (
@@ -1093,9 +1101,9 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Bağla',
       ),
-      'Current' => 
+      'Current Custom Fallback File' => 
       array (
-        0 => 'Şu Anki',
+        0 => 'Mevcut Özel Geri Dönüş Dosyası',
       ),
       'Current Installed Version' => 
       array (
@@ -1156,6 +1164,10 @@ X-Crowdin-File-ID: 4
       'Custom Fading: Overlap Time (seconds)' => 
       array (
         0 => 'Custom Fading: Örtüşme Zamanı (saniye)',
+      ),
+      'Custom Fallback File' => 
+      array (
+        0 => 'Özel Geri Dönüş Dosyası',
       ),
       'Custom Fields' => 
       array (
@@ -1417,6 +1429,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Kapat',
       ),
+      'Disable Optimizations' => 
+      array (
+        0 => 'Optimizasyonları Devre Dışı Bırak',
+      ),
       'Disable Two-Factor' => 
       array (
         0 => 'İki Faktörlü Doğrulamayı Devredışı Bırak',
@@ -1460,6 +1476,10 @@ X-Crowdin-File-ID: 4
       'Disk Space' => 
       array (
         0 => 'Disk Alanı',
+      ),
+      'Disk caching makes a system much faster and more responsive in general. It does not take memory away from applications in any way since it will automatically be released by the operating system when needed.' => 
+      array (
+        0 => 'Disk önbelleğe alma bir sistemi genel olarak çok daha hızlı ve daha duyarlı hale getirir. Gerektiğinde işletim sistemi tarafından otomatik olarak serbest bırakılacağı için hiçbir şekilde uygulamalardan hafızayı almaz.',
       ),
       'Display Name' => 
       array (
@@ -2053,6 +2073,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Yüksek',
       ),
+      'High I/O Wait can indicate a bottleneck with the server\'s hard disk, a potentially failing hard disk, or heavy load on the hard disk.' => 
+      array (
+        0 => 'Yüksek G/Ç Bekleme sunucunun sabit diskinde bir darboğaz olduğunu potansiyel olarak arızalı bir sabit diski veya sabit diskte ağır yük olduğunu gösterebilir.',
+      ),
       'Higher weight playlists are played more frequently compared to other lower-weight playlists.' => 
       array (
         0 => 'Yüksek önceliğe sahip çalma listeleri daha sık çalınır.',
@@ -2237,6 +2261,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Bir bug veya hata yaşıyorsanız aşağıdaki bağlantıyı kullanarak GitHub sorunu gönderebilirsiniz.',
       ),
+      'If your installation is constrained by CPU or memory, you can change this setting to tune the resources used by Liquidsoap.' => 
+      array (
+        0 => 'Kurulumunuz CPU veya bellek tarafından kısıtlıysa Liquidsoap tarafından kullanılan kaynakları ayarlamak için bu ayarı değiştirebilirsiniz.',
+      ),
       'If your streaming software requires a specific mount point path, specify it here. Otherwise, use the default.' => 
       array (
         0 => 'Canlı yayın yazılımınız belirli bir bağlantı noktası yolu gerektiriyorsa burada belirtin. Aksi takdirde varsayılanı kullanın.',
@@ -2329,9 +2357,9 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Veri Fikstürleri Kuruluyor',
       ),
-      'Instruct Liquidsoap to use any replaygain metadata associated with a song to control its volume level.' => 
+      'Instruct Liquidsoap to use any replaygain metadata associated with a song to control its volume level. This may increase CPU consumption.' => 
       array (
-        0 => 'Liquidsoap cihazına ses seviyesini kontrol etmek için bir şarkıyla ilişkili herhangi bir replaygain meta verisini kullanması talimatını verin.',
+        0 => 'Liquidsoap\'a şarkının ses seviyesini kontrol etmek için bir şarkıyla ilişkili herhangi bir yeniden oynatma meta verisini kullanmasını söyleyin. Bu CPU tüketimini artırabilir.',
       ),
       'Instructions' => 
       array (
@@ -2525,13 +2553,17 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Liquidsoap Günlüğü',
       ),
+      'Liquidsoap Performance Tuning' => 
+      array (
+        0 => 'Liquidsoap Performans Ayarı',
+      ),
       'List one IP address or group (in CIDR format) per line.' => 
       array (
         0 => 'Her satıra bir IP adresi veya grup (CIDR biçiminde) yazın.',
       ),
       'List one user agent per line. Wildcards (*) are allowed.' => 
       array (
-        0 => '',
+        0 => 'Her satıra bir tarayıcı listeleyin. Joker karakterlere (*) izin verilir.',
       ),
       'Listener Analytics Collection' => 
       array (
@@ -2585,6 +2617,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'DJ:',
       ),
+      'Live Streaming' => 
+      array (
+        0 => 'Canlı Yayın',
+      ),
       'Live stream connected.' => 
       array (
         0 => 'Canlı yayın bağlandı.',
@@ -2592,6 +2628,10 @@ X-Crowdin-File-ID: 4
       'Live stream disconnected.' => 
       array (
         0 => 'Canlı yayın bağlantısı kesildi.',
+      ),
+      'Load Average' => 
+      array (
+        0 => 'Yük Ortalaması',
       ),
       'Loading...' => 
       array (
@@ -2687,23 +2727,23 @@ X-Crowdin-File-ID: 4
       ),
       'Manage Station Broadcasting' => 
       array (
-        0 => 'Radyo Canlı Yayın Yönetimi',
+        0 => 'Canlı Yayın Yönetimi',
       ),
       'Manage Station Media' => 
       array (
-        0 => 'Radyo Müzik Yönetimi',
+        0 => 'Müzik Dosyaları Yönetimi',
       ),
       'Manage Station Mount Points' => 
       array (
-        0 => 'Radyo Bağlantı Noktası Yönetimi',
+        0 => 'Bağlantı Noktası Yönetimi',
       ),
       'Manage Station Podcasts' => 
       array (
-        0 => 'Radyo Podcasts Yönetimi',
+        0 => 'Podcasts Yönetimi',
       ),
       'Manage Station Profile' => 
       array (
-        0 => 'Radyo Profil Yönetimi',
+        0 => 'Profil Yönetimi',
       ),
       'Manage Station Remote Relays' => 
       array (
@@ -2711,11 +2751,11 @@ X-Crowdin-File-ID: 4
       ),
       'Manage Station Streamers' => 
       array (
-        0 => 'Radyo DJ Yönetimi',
+        0 => 'DJ Yönetimi',
       ),
       'Manage Station Web Hooks' => 
       array (
-        0 => 'Radyo Web Kancası Yönetimi',
+        0 => 'Web Kancası Yönetimi',
       ),
       'Manage Stations' => 
       array (
@@ -2829,6 +2869,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Bellek',
       ),
+      'Memory Stats Help' => 
+      array (
+        0 => 'Bellek İstatistikleri Yardımı',
+      ),
       'Merge playlist to play as a single track.' => 
       array (
         0 => 'Tek bir parça olarak çalmak için çalma listesini birleştirin.',
@@ -2919,6 +2963,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'En Yeni Yedekleme Günlüğü',
       ),
+      'Most hosting providers will put more Virtual Machines (VPSes) on a server than the hardware can handle when each VM is running at full CPU load. This is called over-provisioning, which can lead to other VMs on the server "stealing" CPU time from your VM and vice-versa.' => 
+      array (
+        0 => 'Çoğu barındırma sağlayıcısı bir sunucuya her bir VM tam CPU yükünde çalışırken donanımın kaldırabileceğinden daha fazla Sanal Makine (VPS) yerleştirir. Buna aşırı provizyon denir ve bu sunucudaki diğer VM\'lerin VM\'nizden CPU zamanını "çalmasına" neden olabilir ve bunun tersi de geçerlidir.',
+      ),
       'Mount Name:' => 
       array (
         0 => 'Bağlantı Noktası:',
@@ -2982,6 +3030,10 @@ X-Crowdin-File-ID: 4
       'Need Help?' => 
       array (
         0 => 'Yardıma Mı İhtiyacınız Var?',
+      ),
+      'Network Interfaces' => 
+      array (
+        0 => 'Ağ Arayüzleri',
       ),
       'Never run' => 
       array (
@@ -3238,6 +3290,10 @@ X-Crowdin-File-ID: 4
       'Once you have configured automated assignment, click the button below to run the automated assignment process.' => 
       array (
         0 => 'Otomatik atamayı yapılandırdıktan sonra otomatik atama sürecini çalıştırmak için aşağıdaki düğmeyi tıklayın.',
+      ),
+      'One important note on I/O Wait is that it can indicate a bottleneck or problem but also may be completely meaningless, depending on the workload and general available resources. A constantly high I/O Wait should prompt further investigation with more sophisticated tools.' => 
+      array (
+        0 => 'G/Ç Bekleme ile ilgili önemli bir not bir darboğaz veya sorun belirtebileceği ancak iş yüküne ve genel mevcut kaynaklara bağlı olarak tamamen anlamsız olabileceğidir. Sürekli yüksek bir G/Ç Beklemesi daha karmaşık araçlarla daha fazla araştırma yapılmasını sağlamalıdır.',
       ),
       'Only Send One Tweet Every...' => 
       array (
@@ -3679,6 +3735,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'AutoDJ Sırasını Yeniden Oluştur',
       ),
+      'Received' => 
+      array (
+        0 => 'Alındı',
+      ),
       'Record Live Broadcasts' => 
       array (
         0 => 'Canlı Yayını Kaydet',
@@ -3747,9 +3807,21 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Çıkış Zamanı',
       ),
+      'Reload Configuration' => 
+      array (
+        0 => 'Yapılandırmayı Yeniden Yükle',
+      ),
       'Reload System Data' => 
       array (
         0 => 'Sistem Verilerini Yeniden Yükle',
+      ),
+      'Reload broadcasting? Current listeners will not be disconnected.' => 
+      array (
+        0 => 'Canlı yayın yeniden başlatılsın mı? Mevcut dinleyicilerin bağlantısı kesilmeyecektir.',
+      ),
+      'Reload to Apply Changes' => 
+      array (
+        0 => 'Değişiklikleri Uygulamak İçin Yeniden Başlat',
       ),
       'Remember me' => 
       array (
@@ -3927,10 +3999,6 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Canlı yayın yeniden başlatılsın mı? Mevcut dinleyicilerin bağlantısı kesilir.',
       ),
-      'Restart to Apply Changes' => 
-      array (
-        0 => 'Değişiklikleri Uygulamak İçin Yeniden Başlat',
-      ),
       'Restoring Backups' => 
       array (
         0 => 'Yedekleri Geri Yükleme',
@@ -4071,6 +4139,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Kaydet',
       ),
+      'Save Changes first' => 
+      array (
+        0 => 'Önce Değişiklikleri Kaydet',
+      ),
       'Save and Continue' => 
       array (
         0 => 'Kaydet ve Devam Et',
@@ -4155,6 +4227,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Seç',
       ),
+      'Select Custom Fallback File' => 
+      array (
+        0 => 'Özel Geri Dönüş Dosyasını Seçin',
+      ),
       'Select File' => 
       array (
         0 => 'Dosya Seç',
@@ -4214,6 +4290,10 @@ X-Crowdin-File-ID: 4
       'Send Recovery E-mail' => 
       array (
         0 => 'Kurtarma E-postası Gönderin',
+      ),
+      'Send Test Message' => 
+      array (
+        0 => 'Test Mesajı Gönder',
       ),
       'Send an e-mail to specified address(es).' => 
       array (
@@ -4603,13 +4683,17 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Radyo Saat Dilimi',
       ),
+      'Station reloaded.' => 
+      array (
+        0 => 'Sunucu yeniden başlatıldı.',
+      ),
       'Station restarted.' => 
       array (
         0 => 'Sunucu yeniden başlatıldı!',
       ),
       'Station(s)' => 
       array (
-        0 => 'Radyo(lar)',
+        0 => 'Radyo',
       ),
       'Station-Specific Debugging' => 
       array (
@@ -4622,6 +4706,14 @@ X-Crowdin-File-ID: 4
       'Statistics Overview' => 
       array (
         0 => 'İstatistik Önizlemesi',
+      ),
+      'Steal' => 
+      array (
+        0 => 'Steal',
+      ),
+      'Steal (St)' => 
+      array (
+        0 => 'Steal (St)',
       ),
       'Step 1: Scan QR Code' => 
       array (
@@ -4645,7 +4737,7 @@ X-Crowdin-File-ID: 4
       ),
       'Storage Adapter' => 
       array (
-        0 => 'Depolama Adaptörü',
+        0 => 'Depolama Konumu',
       ),
       'Storage Location' => 
       array (
@@ -4803,6 +4895,22 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Deneme',
       ),
+      'Test Message' => 
+      array (
+        0 => 'Test Mesajı',
+      ),
+      'Test message sent successfully.' => 
+      array (
+        0 => 'Test mesajı başarıyla gönderildi.',
+      ),
+      'Test message sent.' => 
+      array (
+        0 => 'Test mesajı gönderildi.',
+      ),
+      'The I/O Wait is the percentage of time that the CPU is waiting for disk access before it can continue the work that depends on the result of this.' => 
+      array (
+        0 => 'G/Ç Bekleme bunun sonucuna bağlı olarak CPU\'nun çalışmaya devam edebilmesi için disk erişimini beklediği sürenin yüzdesidir.',
+      ),
       'The URL that will receive the POST messages any time an event is triggered.' => 
       array (
         0 => 'Bir URL olay tetiklendiğinde POST mesajlarını alacaktır.',
@@ -4810,6 +4918,10 @@ X-Crowdin-File-ID: 4
       'The account associated with e-mail address "%s" has been set as an administrator' => 
       array (
         0 => '%s e-posta adresi yönetici olarak atandı.',
+      ),
+      'The amount of memory Linux is using for disk caching.' => 
+      array (
+        0 => 'Linux\'un disk önbelleğe alma için kullandığı bellek miktarı.',
       ),
       'The application environment.' => 
       array (
@@ -4826,6 +4938,14 @@ X-Crowdin-File-ID: 4
       'The contact person of the podcast. May be required in order to list the podcast on services like Apple Podcasts, Spotify, Google Podcasts, etc.' => 
       array (
         0 => 'Podcast\'in ilgili kişisi. Podcast\'i Apple Podcasts, Spotify, Google Podcasts vb. hizmetlerde listelemek için gerekli olabilir.',
+      ),
+      'The current CPU usage including I/O Wait and Steal.' => 
+      array (
+        0 => 'G/Ç Bekleme ve Çalma dahil mevcut CPU kullanımı.',
+      ),
+      'The current Memory usage excluding cached memory.' => 
+      array (
+        0 => 'Önbelleğe alınmış bellek hariç geçerli Bellek kullanımı.',
       ),
       'The date when the episode should be published.' => 
       array (
@@ -5007,6 +5127,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Tema',
       ),
+      'There is no existing custom fallback file associated with this station.' => 
+      array (
+        0 => 'Bu radyoyla ilişkilendirilmiş mevcut özel bir geri dönüş dosyası yok.',
+      ),
       'There is no existing intro file associated with this mount point.' => 
       array (
         0 => 'Bu bağlantı noktasıyla ilişkilendirilmiş mevcut bir karşılama müziği yok.',
@@ -5042,6 +5166,10 @@ X-Crowdin-File-ID: 4
       'This can have an adverse impact on system performance. You should disable this when possible.' => 
       array (
         0 => 'Bunun sistem performansı üzerinde olumsuz bir etkisi olabilir. Mümkün olduğunda bunu devre dışı bırakmalısınız.',
+      ),
+      'This can make it look like your memory is low while it actually is not. Some monitoring solutions/panels include cached memory in their used memory statistics without indicating this.' => 
+      array (
+        0 => 'Bu aslında değilken hafızanızın düşükmüş gibi görünmesine neden olabilir. Bazı izleme çözümleri/panelleri bunu belirtmeden kullanılan bellek istatistiklerinde önbelleğe alınmış belleği içerir.',
       ),
       'This code will be included in the frontend configuration. Allowed formats are:' => 
       array (
@@ -5107,6 +5235,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Bu dosya AzuraCast tarafından otomatik olarak oluşturulmuştur.',
       ),
+      'This file will be played on your radio station any time no media is scheduled to play or a critical error occurs that interrupts regular broadcasting.' => 
+      array (
+        0 => 'Bu dosya herhangi bir medyanın oynatılması planlanmadığında veya normal yayını kesintiye uğratan kritik bir hata oluştuğunda radyo istasyonunuzda oynatılacaktır.',
+      ),
       'This installation has not been backed up in the last two weeks.' => 
       array (
         0 => 'Bu kurulum son iki hafta içerisinde yedeklenmedi.',
@@ -5118,6 +5250,10 @@ X-Crowdin-File-ID: 4
       'This introduction file should exactly match the bitrate and format of the mount point itself.' => 
       array (
         0 => 'Bu tanıtım dosyası, bağlantı noktasının kendisinin bit hızı ve biçimiyle tam olarak eşleşmelidir.',
+      ),
+      'This is a test message from AzuraCast. If you are receiving this message, it means your e-mail settings are configured correctly.' => 
+      array (
+        0 => 'Bu AzuraCast\'tan bir test mesajıdır. Bu mesajı alıyorsanız e-posta ayarlarınızın doğru yapılandırıldığı anlamına gelir.',
       ),
       'This is an advanced feature and custom code is not officially supported by AzuraCast. You may break your station by adding custom code, but removing it should fix any issues.' => 
       array (
@@ -5275,6 +5411,14 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Saat Dilimi',
       ),
+      'Time spent waiting for disk I/O to be completed.' => 
+      array (
+        0 => 'Disk G/Ç\'nin tamamlanmasını beklemek için harcanan süre.',
+      ),
+      'Time stolen by other virtual machines on the same physical server.' => 
+      array (
+        0 => 'Aynı fiziksel sunucudaki diğer sanal makineler tarafından çalınan zaman.',
+      ),
       'Title' => 
       array (
         0 => 'Çalan Şarkı İsmi',
@@ -5282,6 +5426,10 @@ X-Crowdin-File-ID: 4
       'Title Sort Order' => 
       array (
         0 => 'Başlık Sıralama Düzeni',
+      ),
+      'To alleviate this potential problem with shared CPU resources, hosts assign "credits" to a VPS which are used up according to an algorithm based on the CPU load as well as the time over which the CPU load is generated. If your VM\'s assigned credit is used up, they will take CPU time from your VM and assign it to other VMs on the machine. This is seen as the "Steal" or "St" value.' => 
+      array (
+        0 => 'Paylaşılan CPU kaynaklarıyla ilgili bu olası sorunu hafifletmek için ana bilgisayarlar CPU yükünün yanı sıra CPU yükünün oluşturulduğu süreye dayalı bir algoritmaya göre kullanılan bir VPS\'ye "krediler" atar. VM\'nizin atanan kredisi kullanılırsa VM\'nizden CPU zamanını alacak ve bunu makinedeki diğer VM\'lere atayacaktır. Bu "Steal" veya "St" değeri olarak görülür.',
       ),
       'To download the GeoLite database:' => 
       array (
@@ -5331,13 +5479,25 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Toplam',
       ),
+      'Total Disk Space' => 
+      array (
+        0 => 'Toplam Disk Alanı',
+      ),
       'Total Listener Hours' => 
       array (
         0 => 'Toplam Dinleyici Saati',
       ),
+      'Total RAM' => 
+      array (
+        0 => 'Toplam RAM',
+      ),
       'Track Number' => 
       array (
         0 => 'Parça Numarası',
+      ),
+      'Transmitted' => 
+      array (
+        0 => 'İletilen',
       ),
       'Triggers' => 
       array (
@@ -5427,6 +5587,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Kullanıcı URLsi',
       ),
+      'Unassigned Files' => 
+      array (
+        0 => 'Atanmamış Dosyalar',
+      ),
       'Unique' => 
       array (
         0 => 'Ziyaretçi',
@@ -5499,6 +5663,14 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Otomatik olarak uygun dizine çıkarmak için dosyayı bu sayfaya yükleyin.',
       ),
+      'Use' => 
+      array (
+        0 => 'Kullan',
+      ),
+      'Use (Us)' => 
+      array (
+        0 => 'Kullan (Us)',
+      ),
       'Use API keys to authenticate with the AzuraCast API using the same permissions as your user account.' => 
       array (
         0 => 'Kullanıcı hesabınızla aynı izinleri kullanarak AzuraCast API ile kimlik doğrulaması yapmak için API anahtarlarını kullanın.',
@@ -5514,6 +5686,14 @@ X-Crowdin-File-ID: 4
       'Use Icecast 2.4 on this server.' => 
       array (
         0 => 'Icecast 2.4 kullan',
+      ),
+      'Use Less CPU (Uses More Memory)' => 
+      array (
+        0 => 'Daha Az CPU Kullanın (Daha Fazla Bellek Kullanır)',
+      ),
+      'Use Less Memory (Uses More CPU)' => 
+      array (
+        0 => 'Daha Az Bellek Kullanın (Daha Fazla CPU Kullanır)',
       ),
       'Use Liquidsoap on this server.' => 
       array (
@@ -5542,6 +5722,10 @@ X-Crowdin-File-ID: 4
       'Use the Telegram Bot API to send a message to a channel.' => 
       array (
         0 => 'Bir kanala mesaj göndermek için Telegram Bot APIsini kullanın.',
+      ),
+      'Used' => 
+      array (
+        0 => 'Kullanılan',
       ),
       'Used for "Forgot Password" functionality, web hooks and other functions.' => 
       array (
@@ -5598,10 +5782,6 @@ X-Crowdin-File-ID: 4
       'Usually enabled for port 465, disabled for ports 587 or 25.' => 
       array (
         0 => 'Genellikle 465 numaralı bağlantı portu için etkinleştirilir. 587 veya 25 numaralı bağlantı portları için devre dışı bırakılır.',
-      ),
-      'Utilities' => 
-      array (
-        0 => 'Araçlar',
       ),
       'Valid options: %s' => 
       array (
@@ -5662,6 +5842,14 @@ X-Crowdin-File-ID: 4
       'Volume' => 
       array (
         0 => 'Ses',
+      ),
+      'Wait' => 
+      array (
+        0 => 'Bekle',
+      ),
+      'Wait (Wa)' => 
+      array (
+        0 => 'Bekle (Wa)',
       ),
       'Warning' => 
       array (
@@ -5806,6 +5994,10 @@ X-Crowdin-File-ID: 4
       'You are currently running version %s. Updating is highly recommended.' => 
       array (
         0 => 'Şu anda AzuraCast %s sürümüne sahipsiniz. Güncelleme şiddetle tavsiye edilir.',
+      ),
+      'You are not permitted to submit requests.' => 
+      array (
+        0 => 'İstek göndermenize izin verilmiyor.',
       ),
       'You can also upload files in bulk via SFTP.' => 
       array (

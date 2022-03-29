@@ -14,8 +14,8 @@ Language-Team: Portuguese, Brazilian
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-POT-Creation-Date: 2022-02-15T23:07:32+00:00
-PO-Revision-Date: 2022-02-18 18:14
+POT-Creation-Date: 2022-03-08T23:02:55+00:00
+PO-Revision-Date: 2022-03-08 23:03
 Language: pt_BR
 Plural-Forms: nplurals=2; plural=(n != 1);
 X-Crowdin-Project: azuracast
@@ -52,10 +52,6 @@ X-Crowdin-File-ID: 4
       '%s is not recognized as a service.' => 
       array (
         0 => '%s não é reconhecido como um serviço.',
-      ),
-      '%s of %s Used' => 
-      array (
-        0 => '%s de %s Usado',
       ),
       '%{ days } Days' => 
       array (
@@ -116,10 +112,6 @@ X-Crowdin-File-ID: 4
       '(in seconds)' => 
       array (
         0 => '(em segundos)',
-      ),
-      '15-Minute Average' => 
-      array (
-        0 => 'Média de 15 minutos',
       ),
       'A completely random track is picked for playback every time the queue is populated.' => 
       array (
@@ -453,6 +445,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Tentar recuperar automaticamente o ISRC quando estiver faltando',
       ),
+      'Audio transcoding applications like Liquidsoap use a consistent amount of CPU over time, which gradually drains this available credit. If you regularly see stolen CPU time, you should consider migrating to a VM that has CPU resources dedicated to your instance.' => 
+      array (
+        0 => 'Aplicativos de transcodificação de áudio como Liquidsoap usam uma quantidade consistente de CPU ao longo do tempo, o que consome gradualmente esse crédito disponível. Se você vê regularmente a CPU sendo usada, considere migrar para uma VM que tenha recursos de CPU dedicados à sua instância.',
+      ),
       'Audit Log' => 
       array (
         0 => 'Registro de auditoria',
@@ -649,6 +645,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Cópias de Segurança',
       ),
+      'Balanced' => 
+      array (
+        0 => 'Balanceado',
+      ),
       'Band' => 
       array (
         0 => 'Banda',
@@ -744,6 +744,14 @@ X-Crowdin-File-ID: 4
       'CPU Load' => 
       array (
         0 => 'CPU',
+      ),
+      'CPU Stats Help' => 
+      array (
+        0 => 'Ajuda com as Estatísticas da CPU',
+      ),
+      'Cached' => 
+      array (
+        0 => 'Em Cache',
       ),
       'Categories' => 
       array (
@@ -1093,9 +1101,9 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Escuta',
       ),
-      'Current' => 
+      'Current Custom Fallback File' => 
       array (
-        0 => 'Atual',
+        0 => 'Arquivo Fallback Personalizado',
       ),
       'Current Installed Version' => 
       array (
@@ -1156,6 +1164,10 @@ X-Crowdin-File-ID: 4
       'Custom Fading: Overlap Time (seconds)' => 
       array (
         0 => 'Fading personalizado: tempo de sobreposição (segundos)',
+      ),
+      'Custom Fallback File' => 
+      array (
+        0 => 'Arquivo Fallback Personalizado',
       ),
       'Custom Fields' => 
       array (
@@ -1417,6 +1429,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Desativar Crossfading',
       ),
+      'Disable Optimizations' => 
+      array (
+        0 => 'Desativar Otimizações',
+      ),
       'Disable Two-Factor' => 
       array (
         0 => 'Desativar autenticação de dois fatores',
@@ -1460,6 +1476,10 @@ X-Crowdin-File-ID: 4
       'Disk Space' => 
       array (
         0 => 'Espaço em Disco',
+      ),
+      'Disk caching makes a system much faster and more responsive in general. It does not take memory away from applications in any way since it will automatically be released by the operating system when needed.' => 
+      array (
+        0 => 'O cache em disco torna um sistema muito mais rápido e mais ágil em geral. Ele não retira a memória das aplicações de forma alguma, pois será automaticamente liberado pelo sistema operacional quando necessário.',
       ),
       'Display Name' => 
       array (
@@ -2053,6 +2073,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Alta',
       ),
+      'High I/O Wait can indicate a bottleneck with the server\'s hard disk, a potentially failing hard disk, or heavy load on the hard disk.' => 
+      array (
+        0 => 'A demora de E/S pode indicar um congestionamento com o disco rígido do servidor, um disco rígido potencialmente falho, ou um alto consumo do disco rígido.',
+      ),
       'Higher weight playlists are played more frequently compared to other lower-weight playlists.' => 
       array (
         0 => 'Playlists de maior peso são tocadas com mais frequência se comparadas com outras playlists de menor peso.',
@@ -2237,6 +2261,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Se você econtrou um bug ou um erro, você pode submeter uma questão GitHub usando o link abaixo.',
       ),
+      'If your installation is constrained by CPU or memory, you can change this setting to tune the resources used by Liquidsoap.' => 
+      array (
+        0 => 'Se sua instalação estiver limitada pela CPU ou memória, você pode alterar esta configuração para ajustar os recursos utilizados pelo Liquidsoap.',
+      ),
       'If your streaming software requires a specific mount point path, specify it here. Otherwise, use the default.' => 
       array (
         0 => 'Se o seu software de streaming requer um caminho de ponto de montagem específico, especifique-o aqui. Caso contrário, use o padrão.',
@@ -2329,9 +2357,9 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Instalando Instalações de Dados',
       ),
-      'Instruct Liquidsoap to use any replaygain metadata associated with a song to control its volume level.' => 
+      'Instruct Liquidsoap to use any replaygain metadata associated with a song to control its volume level. This may increase CPU consumption.' => 
       array (
-        0 => 'Instrua o Liquidsoap para usar qualquer metadados de replaygain associado a uma música para controlar o seu nível de volume.',
+        0 => 'Instrua o Liquidsoap a usar quaisquer metadados do replaygain associados a uma música para controlar o nível de volume. Isso pode aumentar o consumo da CPU.',
       ),
       'Instructions' => 
       array (
@@ -2525,6 +2553,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Log do Liquidsoap',
       ),
+      'Liquidsoap Performance Tuning' => 
+      array (
+        0 => 'Ajuste de Desempenho do Liquidsoap',
+      ),
       'List one IP address or group (in CIDR format) per line.' => 
       array (
         0 => 'Liste um endereço IP ou grupo (no formato CIDR) por linha.',
@@ -2585,6 +2617,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Transmissão Ao Vivo:',
       ),
+      'Live Streaming' => 
+      array (
+        0 => 'Transmissão Ao Vivo',
+      ),
       'Live stream connected.' => 
       array (
         0 => 'Transmissão ao vivo conectada.',
@@ -2592,6 +2628,10 @@ X-Crowdin-File-ID: 4
       'Live stream disconnected.' => 
       array (
         0 => 'Transmissão ao vivo desconectada.',
+      ),
+      'Load Average' => 
+      array (
+        0 => 'Média de Consumo',
       ),
       'Loading...' => 
       array (
@@ -2829,6 +2869,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Memória',
       ),
+      'Memory Stats Help' => 
+      array (
+        0 => 'Ajuda com as Estatísticas de Memória',
+      ),
       'Merge playlist to play as a single track.' => 
       array (
         0 => 'Mesclar lista de reprodução para tocar como uma faixa única.',
@@ -2919,6 +2963,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Log de Backup mais recente',
       ),
+      'Most hosting providers will put more Virtual Machines (VPSes) on a server than the hardware can handle when each VM is running at full CPU load. This is called over-provisioning, which can lead to other VMs on the server "stealing" CPU time from your VM and vice-versa.' => 
+      array (
+        0 => 'A maioria dos provedores de hospedagem coloca mais máquinas virtuais (VPSs) em um servidor do que o hardware pode suportar quando cada VM estiver sendo executada com carga total da CPU. Isso é chamado de provisionamento excessivo, que pode levar outras VMs no servidor a "sugar" a CPU de sua VM e vice-versa.',
+      ),
       'Mount Name:' => 
       array (
         0 => 'Nome do Ponto de Montagem:',
@@ -2982,6 +3030,10 @@ X-Crowdin-File-ID: 4
       'Need Help?' => 
       array (
         0 => 'Precisa de ajuda?',
+      ),
+      'Network Interfaces' => 
+      array (
+        0 => 'Interfaces de Rede',
       ),
       'Never run' => 
       array (
@@ -3238,6 +3290,10 @@ X-Crowdin-File-ID: 4
       'Once you have configured automated assignment, click the button below to run the automated assignment process.' => 
       array (
         0 => 'Uma vez que você tenha configurado a atribuição automatizada, clique no botão abaixo para executar o processo.',
+      ),
+      'One important note on I/O Wait is that it can indicate a bottleneck or problem but also may be completely meaningless, depending on the workload and general available resources. A constantly high I/O Wait should prompt further investigation with more sophisticated tools.' => 
+      array (
+        0 => 'Uma observação importante sobre a espera de E/S é que ela pode indicar um congestionamento ou problema, mas também pode ser completamente sem sentido, dependendo da carga de trabalho e dos recursos gerais disponíveis. Uma espera de E/S constantemente alta deve levar a uma investigação mais aprofundada com ferramentas mais sofisticadas.',
       ),
       'Only Send One Tweet Every...' => 
       array (
@@ -3679,6 +3735,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Reconstruir Fila de AutoDJ',
       ),
+      'Received' => 
+      array (
+        0 => 'Recebido',
+      ),
       'Record Live Broadcasts' => 
       array (
         0 => 'Gravar Transmissões Ao Vivo',
@@ -3747,9 +3807,21 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Data de Lançamento',
       ),
+      'Reload Configuration' => 
+      array (
+        0 => 'Recarregar Configuração',
+      ),
       'Reload System Data' => 
       array (
         0 => 'Recarregar Dados do Sistema',
+      ),
+      'Reload broadcasting? Current listeners will not be disconnected.' => 
+      array (
+        0 => 'Reiniciar a transmissão? Os ouvintes atuais não serão desconectados.',
+      ),
+      'Reload to Apply Changes' => 
+      array (
+        0 => 'Reiniciar para Aplicar as Alterações',
       ),
       'Remember me' => 
       array (
@@ -3927,10 +3999,6 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Reiniciar a transmissão? Isto irá desconectar qualquer ouvinte atual.',
       ),
-      'Restart to Apply Changes' => 
-      array (
-        0 => 'Reiniciar para Aplicar Alterações',
-      ),
       'Restoring Backups' => 
       array (
         0 => 'Restaurar Backup',
@@ -4071,6 +4139,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Salvar alterações',
       ),
+      'Save Changes first' => 
+      array (
+        0 => 'Salve as Alterações Primeiro',
+      ),
       'Save and Continue' => 
       array (
         0 => 'Salvar e Continuar',
@@ -4155,6 +4227,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Selecionar',
       ),
+      'Select Custom Fallback File' => 
+      array (
+        0 => 'Selecionar Arquivo Falback Personalizado',
+      ),
       'Select File' => 
       array (
         0 => 'Selecione o arquivo',
@@ -4214,6 +4290,10 @@ X-Crowdin-File-ID: 4
       'Send Recovery E-mail' => 
       array (
         0 => 'Enviar E-mail de Recuperação',
+      ),
+      'Send Test Message' => 
+      array (
+        0 => 'Enviar Mensagem de Teste',
       ),
       'Send an e-mail to specified address(es).' => 
       array (
@@ -4603,6 +4683,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Fuso horário da Estação',
       ),
+      'Station reloaded.' => 
+      array (
+        0 => 'Estação Reiniciada.',
+      ),
       'Station restarted.' => 
       array (
         0 => 'Estação reiniciada.',
@@ -4622,6 +4706,14 @@ X-Crowdin-File-ID: 4
       'Statistics Overview' => 
       array (
         0 => 'Visualizar estatísticas',
+      ),
+      'Steal' => 
+      array (
+        0 => 'Steal',
+      ),
+      'Steal (St)' => 
+      array (
+        0 => 'Steal (St)',
       ),
       'Step 1: Scan QR Code' => 
       array (
@@ -4803,6 +4895,22 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Teste',
       ),
+      'Test Message' => 
+      array (
+        0 => 'Mensagem de Teste',
+      ),
+      'Test message sent successfully.' => 
+      array (
+        0 => 'Mensagem de teste enviada com sucesso.',
+      ),
+      'Test message sent.' => 
+      array (
+        0 => 'Mensagem de teste enviada.',
+      ),
+      'The I/O Wait is the percentage of time that the CPU is waiting for disk access before it can continue the work that depends on the result of this.' => 
+      array (
+        0 => 'A Espera de E/S é a porcentagem de tempo que a CPU está aguardando o acesso ao disco antes de poder continuar o trabalho que depende do resultado disso.',
+      ),
       'The URL that will receive the POST messages any time an event is triggered.' => 
       array (
         0 => 'A URL que receberá o POST das mensagens sempre que um evento for acionado.',
@@ -4810,6 +4918,10 @@ X-Crowdin-File-ID: 4
       'The account associated with e-mail address "%s" has been set as an administrator' => 
       array (
         0 => 'A conta associada com o e-mail "%s" foi alterada para ser um administrador',
+      ),
+      'The amount of memory Linux is using for disk caching.' => 
+      array (
+        0 => 'A quantidade de memória que o Linux está usando para cache de disco.',
       ),
       'The application environment.' => 
       array (
@@ -4826,6 +4938,14 @@ X-Crowdin-File-ID: 4
       'The contact person of the podcast. May be required in order to list the podcast on services like Apple Podcasts, Spotify, Google Podcasts, etc.' => 
       array (
         0 => 'A pessoa de contato do podcast. Pode ser necessário para listar o podcast em serviços como Apple Podcasts, Spotify, Google Podcasts, etc.',
+      ),
+      'The current CPU usage including I/O Wait and Steal.' => 
+      array (
+        0 => 'O uso atual da CPU, incluindo I/O Wait e Steal.',
+      ),
+      'The current Memory usage excluding cached memory.' => 
+      array (
+        0 => 'O uso atual de memória, excluindo a memória em cache.',
       ),
       'The date when the episode should be published.' => 
       array (
@@ -5007,6 +5127,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Tema',
       ),
+      'There is no existing custom fallback file associated with this station.' => 
+      array (
+        0 => 'Não existe nenhum arquivo personalizado de fallback associado a esta estação.',
+      ),
       'There is no existing intro file associated with this mount point.' => 
       array (
         0 => 'Não há nenhum arquivo de introdução associado a este ponto de montagem.',
@@ -5042,6 +5166,10 @@ X-Crowdin-File-ID: 4
       'This can have an adverse impact on system performance. You should disable this when possible.' => 
       array (
         0 => 'Isso pode ter um impacto adverso no desempenho do sistema. Você deve desativar isso quando possível.',
+      ),
+      'This can make it look like your memory is low while it actually is not. Some monitoring solutions/panels include cached memory in their used memory statistics without indicating this.' => 
+      array (
+        0 => 'Isso pode fazer com que pareça que sua memória está baixa, enquanto na verdade não está. Algumas soluções/painéis de monitoramento incluem memória em cache em suas estatísticas de memória usada sem indicar isso.',
       ),
       'This code will be included in the frontend configuration. Allowed formats are:' => 
       array (
@@ -5107,6 +5235,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Este arquivo foi gerado automaticamente pelo AzuraCast.',
       ),
+      'This file will be played on your radio station any time no media is scheduled to play or a critical error occurs that interrupts regular broadcasting.' => 
+      array (
+        0 => 'Este arquivo será reproduzido em sua estação de rádio sempre que nenhuma mídia estiver programada para ser reproduzida ou ocorrer um erro crítico que interrompa a transmissão regular.',
+      ),
       'This installation has not been backed up in the last two weeks.' => 
       array (
         0 => 'Não foi feito backup desta instalação nas últimas duas semanas.',
@@ -5118,6 +5250,10 @@ X-Crowdin-File-ID: 4
       'This introduction file should exactly match the bitrate and format of the mount point itself.' => 
       array (
         0 => 'Este arquivo de introdução deve corresponder exatamente à taxa de bits e ao formato do próprio ponto de montagem.',
+      ),
+      'This is a test message from AzuraCast. If you are receiving this message, it means your e-mail settings are configured correctly.' => 
+      array (
+        0 => 'Esta é uma mensagem de teste do AzuraCast. Se você estiver recebendo esta mensagem, significa que suas configurações de e-mail estão configuradas corretamente.',
       ),
       'This is an advanced feature and custom code is not officially supported by AzuraCast. You may break your station by adding custom code, but removing it should fix any issues.' => 
       array (
@@ -5276,6 +5412,14 @@ Para adicionar um novo horário agendado, clique no botão abaixo.',
       array (
         0 => 'Fuso Horário',
       ),
+      'Time spent waiting for disk I/O to be completed.' => 
+      array (
+        0 => 'Tempo gasto à espera que a E/S do disco seja concluída.',
+      ),
+      'Time stolen by other virtual machines on the same physical server.' => 
+      array (
+        0 => 'Tempo roubado por outras máquinas virtuais no mesmo servidor físico.',
+      ),
       'Title' => 
       array (
         0 => 'Título',
@@ -5283,6 +5427,10 @@ Para adicionar um novo horário agendado, clique no botão abaixo.',
       'Title Sort Order' => 
       array (
         0 => 'Selecionar Ordem de classificação',
+      ),
+      'To alleviate this potential problem with shared CPU resources, hosts assign "credits" to a VPS which are used up according to an algorithm based on the CPU load as well as the time over which the CPU load is generated. If your VM\'s assigned credit is used up, they will take CPU time from your VM and assign it to other VMs on the machine. This is seen as the "Steal" or "St" value.' => 
+      array (
+        0 => 'Para aliviar esse problema potencial com recursos compartilhados da CPU, os hosts atribuem "créditos" a um VPS que são usados de acordo com um algoritmo baseado na carga da CPU, bem como no tempo durante o qual a carga da CPU é gerada. Se o crédito atribuído à sua VM estiver esgotado, eles usarão o tempo de CPU da sua VM e o atribuirão a outras VMs na máquina. Isso é visto como o valor "Steal" ou "St".',
       ),
       'To download the GeoLite database:' => 
       array (
@@ -5332,13 +5480,25 @@ Para adicionar um novo horário agendado, clique no botão abaixo.',
       array (
         0 => 'Total',
       ),
+      'Total Disk Space' => 
+      array (
+        0 => 'Espaço Total em Disco',
+      ),
       'Total Listener Hours' => 
       array (
         0 => 'Total de Horas de Ouvinte',
       ),
+      'Total RAM' => 
+      array (
+        0 => 'Total de RAM',
+      ),
       'Track Number' => 
       array (
         0 => 'Número da faixa',
+      ),
+      'Transmitted' => 
+      array (
+        0 => 'Transmitido',
       ),
       'Triggers' => 
       array (
@@ -5428,6 +5588,10 @@ Para adicionar um novo horário agendado, clique no botão abaixo.',
       array (
         0 => 'Usuário de URL',
       ),
+      'Unassigned Files' => 
+      array (
+        0 => 'Arquivos Não Atribuídos',
+      ),
       'Unique' => 
       array (
         0 => 'Único',
@@ -5500,6 +5664,14 @@ Para adicionar um novo horário agendado, clique no botão abaixo.',
       array (
         0 => 'Faça o upload do arquivo nesta página para extraí-lo automaticamente para o diretório adequado.',
       ),
+      'Use' => 
+      array (
+        0 => 'Uso',
+      ),
+      'Use (Us)' => 
+      array (
+        0 => 'Uso (Nós)',
+      ),
       'Use API keys to authenticate with the AzuraCast API using the same permissions as your user account.' => 
       array (
         0 => 'Use as chaves API para autenticar com a API do AzuraCast utilizando as mesmas permissões que a sua conta de usuário.',
@@ -5515,6 +5687,14 @@ Para adicionar um novo horário agendado, clique no botão abaixo.',
       'Use Icecast 2.4 on this server.' => 
       array (
         0 => 'Usar o Icecast 2.4 neste servidor.',
+      ),
+      'Use Less CPU (Uses More Memory)' => 
+      array (
+        0 => 'Usar menos CPU (Usa Mais Memória)',
+      ),
+      'Use Less Memory (Uses More CPU)' => 
+      array (
+        0 => 'Usar Menos Memória (Usa Mais CPU)',
       ),
       'Use Liquidsoap on this server.' => 
       array (
@@ -5543,6 +5723,10 @@ Para adicionar um novo horário agendado, clique no botão abaixo.',
       'Use the Telegram Bot API to send a message to a channel.' => 
       array (
         0 => 'Use a API de Bot do telegrama para enviar uma mensagem para um canal.',
+      ),
+      'Used' => 
+      array (
+        0 => 'Usado',
       ),
       'Used for "Forgot Password" functionality, web hooks and other functions.' => 
       array (
@@ -5599,10 +5783,6 @@ Para adicionar um novo horário agendado, clique no botão abaixo.',
       'Usually enabled for port 465, disabled for ports 587 or 25.' => 
       array (
         0 => 'Normalmente habilitado para a porta 465, desativado para as portas 587 ou 25.',
-      ),
-      'Utilities' => 
-      array (
-        0 => 'Utilitários',
       ),
       'Valid options: %s' => 
       array (
@@ -5663,6 +5843,14 @@ Para adicionar um novo horário agendado, clique no botão abaixo.',
       'Volume' => 
       array (
         0 => 'Volume',
+      ),
+      'Wait' => 
+      array (
+        0 => 'Espera',
+      ),
+      'Wait (Wa)' => 
+      array (
+        0 => 'Espera (Wa)',
       ),
       'Warning' => 
       array (
@@ -5807,6 +5995,10 @@ Para adicionar um novo horário agendado, clique no botão abaixo.',
       'You are currently running version %s. Updating is highly recommended.' => 
       array (
         0 => 'Você está executando a versão %s. A atualização é altamente recomendada.',
+      ),
+      'You are not permitted to submit requests.' => 
+      array (
+        0 => 'Você não está autorizado a realizar pedidos.',
       ),
       'You can also upload files in bulk via SFTP.' => 
       array (

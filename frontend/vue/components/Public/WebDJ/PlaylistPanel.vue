@@ -98,6 +98,19 @@
                 <p class="mb-0">{{ rowFile.metadata.artist ? rowFile.metadata.artist : lang_unknown_artist }}</p>
             </a>
         </div>
+
+        <div class="list-group list-group-flush" v-if="playlist_1.length > 0">
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"
+               v-for="(rowFile1, rowIndex) in playlist_1">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-0">{{
+                            rowFile1.title ? rowFile1.title : lang_unknown_title
+                        }}</h5>
+                    <!-- <small class="pt-1">{{ rowFile.audio.length | prettifyTime }}</small> -->
+                </div>
+                <p class="mb-0">{{ rowFile1.category ? rowFile1.category : lang_unknown_artist }}</p>
+            </a>
+        </div>
     </div>
 </template>
 
@@ -106,6 +119,7 @@ import track from './Track.js';
 import _ from 'lodash';
 import Icon from '~/components/Common/Icon';
 import VolumeSlider from "~/components/Public/WebDJ/VolumeSlider";
+import axios from 'axios';
 
 export default {
     components: {VolumeSlider, Icon},
@@ -114,6 +128,7 @@ export default {
         return {
             'fileIndex': -1,
             'files': [],
+            'playlist_1':[],
 
             'volume': 100,
             'duration': 0.0,
@@ -154,6 +169,7 @@ export default {
 
         this.$root.$on('new-mixer-value', this.setMixGain);
         this.$root.$on('new-cue', this.onNewCue);
+        this.fetchPlaylist();
     },
     filters: {
         prettifyTime (time) {
@@ -199,6 +215,8 @@ export default {
         },
 
         addNewFiles (newFiles) {
+           
+            console.log(newFiles);
             _.each(newFiles, (file) => {
                 file.readTaglibMetadata((data) => {
                     this.files.push({
@@ -313,6 +331,19 @@ export default {
                 this.seekPosition = e.target.value;
                 this.seek(this.seekPosition / 100);
             }
+        } ,
+       async fetchPlaylist(){
+            await axios.get('https://hgcradio.org/api/library/all').then(({data})=>{
+                console.log("data");
+               console.log(data);
+               this.playlist_1 =  data.data.data;
+               console.log(this.playlist_1 );
+            }).catch((error) => {
+                // this.allerros = error.response.data.errors;;
+                // this.success = false;
+            }).finally(()=>{
+                //this.processing = false
+            })
         }
     }
 };

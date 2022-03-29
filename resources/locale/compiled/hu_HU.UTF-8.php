@@ -14,8 +14,8 @@ Language-Team: Hungarian
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
-POT-Creation-Date: 2022-02-15T23:07:32+00:00
-PO-Revision-Date: 2022-02-18 18:14
+POT-Creation-Date: 2022-03-08T23:02:55+00:00
+PO-Revision-Date: 2022-03-08 23:03
 Language: hu_HU
 Plural-Forms: nplurals=2; plural=(n != 1);
 X-Crowdin-Project: azuracast
@@ -50,10 +50,6 @@ X-Crowdin-File-ID: 4
         0 => '',
       ),
       '%s is not recognized as a service.' => 
-      array (
-        0 => '',
-      ),
-      '%s of %s Used' => 
       array (
         0 => '',
       ),
@@ -113,10 +109,6 @@ X-Crowdin-File-ID: 4
         0 => '',
       ),
       '(in seconds)' => 
-      array (
-        0 => '',
-      ),
-      '15-Minute Average' => 
       array (
         0 => '',
       ),
@@ -452,6 +444,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
+      'Audio transcoding applications like Liquidsoap use a consistent amount of CPU over time, which gradually drains this available credit. If you regularly see stolen CPU time, you should consider migrating to a VM that has CPU resources dedicated to your instance.' => 
+      array (
+        0 => '',
+      ),
       'Audit Log' => 
       array (
         0 => '',
@@ -648,6 +644,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
+      'Balanced' => 
+      array (
+        0 => '',
+      ),
       'Band' => 
       array (
         0 => '',
@@ -741,6 +741,14 @@ X-Crowdin-File-ID: 4
         0 => 'Alapértelmezés szerint az állomások sugárzása a 8000-es portokon keresztül történik. Ha használni szeretnéd a CloudFlare, vagy az SSL szolgáltatásokat a rádió eléréséhez, abban az esetben engedélyezned kell a 80 és 443-as portok elérését is.',
       ),
       'CPU Load' => 
+      array (
+        0 => '',
+      ),
+      'CPU Stats Help' => 
+      array (
+        0 => '',
+      ),
+      'Cached' => 
       array (
         0 => '',
       ),
@@ -1092,7 +1100,7 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
-      'Current' => 
+      'Current Custom Fallback File' => 
       array (
         0 => '',
       ),
@@ -1153,6 +1161,10 @@ X-Crowdin-File-ID: 4
         0 => '',
       ),
       'Custom Fading: Overlap Time (seconds)' => 
+      array (
+        0 => '',
+      ),
+      'Custom Fallback File' => 
       array (
         0 => '',
       ),
@@ -1416,6 +1428,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
+      'Disable Optimizations' => 
+      array (
+        0 => '',
+      ),
       'Disable Two-Factor' => 
       array (
         0 => '',
@@ -1457,6 +1473,10 @@ X-Crowdin-File-ID: 4
         0 => '',
       ),
       'Disk Space' => 
+      array (
+        0 => '',
+      ),
+      'Disk caching makes a system much faster and more responsive in general. It does not take memory away from applications in any way since it will automatically be released by the operating system when needed.' => 
       array (
         0 => '',
       ),
@@ -2052,6 +2072,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
+      'High I/O Wait can indicate a bottleneck with the server\'s hard disk, a potentially failing hard disk, or heavy load on the hard disk.' => 
+      array (
+        0 => '',
+      ),
       'Higher weight playlists are played more frequently compared to other lower-weight playlists.' => 
       array (
         0 => 'A jobban kedvelt súlyozott játszási listák többször kerülnek lejátszásra, a kevésbé kedvelt, súlyozott listákhoz képest.',
@@ -2236,6 +2260,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
+      'If your installation is constrained by CPU or memory, you can change this setting to tune the resources used by Liquidsoap.' => 
+      array (
+        0 => '',
+      ),
       'If your streaming software requires a specific mount point path, specify it here. Otherwise, use the default.' => 
       array (
         0 => '',
@@ -2328,7 +2356,7 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
-      'Instruct Liquidsoap to use any replaygain metadata associated with a song to control its volume level.' => 
+      'Instruct Liquidsoap to use any replaygain metadata associated with a song to control its volume level. This may increase CPU consumption.' => 
       array (
         0 => '',
       ),
@@ -2524,6 +2552,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
+      'Liquidsoap Performance Tuning' => 
+      array (
+        0 => '',
+      ),
       'List one IP address or group (in CIDR format) per line.' => 
       array (
         0 => '',
@@ -2584,11 +2616,19 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
+      'Live Streaming' => 
+      array (
+        0 => '',
+      ),
       'Live stream connected.' => 
       array (
         0 => '',
       ),
       'Live stream disconnected.' => 
+      array (
+        0 => '',
+      ),
+      'Load Average' => 
       array (
         0 => '',
       ),
@@ -2828,6 +2868,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
+      'Memory Stats Help' => 
+      array (
+        0 => '',
+      ),
       'Merge playlist to play as a single track.' => 
       array (
         0 => '',
@@ -2917,6 +2961,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
+      'Most hosting providers will put more Virtual Machines (VPSes) on a server than the hardware can handle when each VM is running at full CPU load. This is called over-provisioning, which can lead to other VMs on the server "stealing" CPU time from your VM and vice-versa.' => 
+      array (
+        0 => '',
+      ),
       'Mount Name:' => 
       array (
         0 => '',
@@ -2978,6 +3026,10 @@ X-Crowdin-File-ID: 4
         0 => '',
       ),
       'Need Help?' => 
+      array (
+        0 => '',
+      ),
+      'Network Interfaces' => 
       array (
         0 => '',
       ),
@@ -3234,6 +3286,10 @@ X-Crowdin-File-ID: 4
         0 => '',
       ),
       'Once you have configured automated assignment, click the button below to run the automated assignment process.' => 
+      array (
+        0 => '',
+      ),
+      'One important note on I/O Wait is that it can indicate a bottleneck or problem but also may be completely meaningless, depending on the workload and general available resources. A constantly high I/O Wait should prompt further investigation with more sophisticated tools.' => 
       array (
         0 => '',
       ),
@@ -3677,6 +3733,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
+      'Received' => 
+      array (
+        0 => '',
+      ),
       'Record Live Broadcasts' => 
       array (
         0 => '',
@@ -3745,7 +3805,19 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
+      'Reload Configuration' => 
+      array (
+        0 => '',
+      ),
       'Reload System Data' => 
+      array (
+        0 => '',
+      ),
+      'Reload broadcasting? Current listeners will not be disconnected.' => 
+      array (
+        0 => '',
+      ),
+      'Reload to Apply Changes' => 
       array (
         0 => '',
       ),
@@ -3925,10 +3997,6 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
-      'Restart to Apply Changes' => 
-      array (
-        0 => '',
-      ),
       'Restoring Backups' => 
       array (
         0 => '',
@@ -4069,6 +4137,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Változtatások mentése',
       ),
+      'Save Changes first' => 
+      array (
+        0 => '',
+      ),
       'Save and Continue' => 
       array (
         0 => '',
@@ -4153,6 +4225,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
+      'Select Custom Fallback File' => 
+      array (
+        0 => '',
+      ),
       'Select File' => 
       array (
         0 => '',
@@ -4210,6 +4286,10 @@ X-Crowdin-File-ID: 4
         0 => '',
       ),
       'Send Recovery E-mail' => 
+      array (
+        0 => '',
+      ),
+      'Send Test Message' => 
       array (
         0 => '',
       ),
@@ -4601,6 +4681,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
+      'Station reloaded.' => 
+      array (
+        0 => '',
+      ),
       'Station restarted.' => 
       array (
         0 => '',
@@ -4618,6 +4702,14 @@ X-Crowdin-File-ID: 4
         0 => 'Állomások',
       ),
       'Statistics Overview' => 
+      array (
+        0 => '',
+      ),
+      'Steal' => 
+      array (
+        0 => '',
+      ),
+      'Steal (St)' => 
       array (
         0 => '',
       ),
@@ -4801,6 +4893,22 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
+      'Test Message' => 
+      array (
+        0 => '',
+      ),
+      'Test message sent successfully.' => 
+      array (
+        0 => '',
+      ),
+      'Test message sent.' => 
+      array (
+        0 => '',
+      ),
+      'The I/O Wait is the percentage of time that the CPU is waiting for disk access before it can continue the work that depends on the result of this.' => 
+      array (
+        0 => '',
+      ),
       'The URL that will receive the POST messages any time an event is triggered.' => 
       array (
         0 => '',
@@ -4808,6 +4916,10 @@ X-Crowdin-File-ID: 4
       'The account associated with e-mail address "%s" has been set as an administrator' => 
       array (
         0 => 'A (z) "%s" e-mail cím beállítva adminisztrátornak',
+      ),
+      'The amount of memory Linux is using for disk caching.' => 
+      array (
+        0 => '',
       ),
       'The application environment.' => 
       array (
@@ -4822,6 +4934,14 @@ X-Crowdin-File-ID: 4
         0 => '',
       ),
       'The contact person of the podcast. May be required in order to list the podcast on services like Apple Podcasts, Spotify, Google Podcasts, etc.' => 
+      array (
+        0 => '',
+      ),
+      'The current CPU usage including I/O Wait and Steal.' => 
+      array (
+        0 => '',
+      ),
+      'The current Memory usage excluding cached memory.' => 
       array (
         0 => '',
       ),
@@ -5005,6 +5125,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
+      'There is no existing custom fallback file associated with this station.' => 
+      array (
+        0 => '',
+      ),
       'There is no existing intro file associated with this mount point.' => 
       array (
         0 => '',
@@ -5038,6 +5162,10 @@ X-Crowdin-File-ID: 4
         0 => '',
       ),
       'This can have an adverse impact on system performance. You should disable this when possible.' => 
+      array (
+        0 => '',
+      ),
+      'This can make it look like your memory is low while it actually is not. Some monitoring solutions/panels include cached memory in their used memory statistics without indicating this.' => 
       array (
         0 => '',
       ),
@@ -5105,6 +5233,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
+      'This file will be played on your radio station any time no media is scheduled to play or a critical error occurs that interrupts regular broadcasting.' => 
+      array (
+        0 => '',
+      ),
       'This installation has not been backed up in the last two weeks.' => 
       array (
         0 => '',
@@ -5114,6 +5246,10 @@ X-Crowdin-File-ID: 4
         0 => '',
       ),
       'This introduction file should exactly match the bitrate and format of the mount point itself.' => 
+      array (
+        0 => '',
+      ),
+      'This is a test message from AzuraCast. If you are receiving this message, it means your e-mail settings are configured correctly.' => 
       array (
         0 => '',
       ),
@@ -5273,11 +5409,23 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Időzóna',
       ),
+      'Time spent waiting for disk I/O to be completed.' => 
+      array (
+        0 => '',
+      ),
+      'Time stolen by other virtual machines on the same physical server.' => 
+      array (
+        0 => '',
+      ),
       'Title' => 
       array (
         0 => 'Cím',
       ),
       'Title Sort Order' => 
+      array (
+        0 => '',
+      ),
+      'To alleviate this potential problem with shared CPU resources, hosts assign "credits" to a VPS which are used up according to an algorithm based on the CPU load as well as the time over which the CPU load is generated. If your VM\'s assigned credit is used up, they will take CPU time from your VM and assign it to other VMs on the machine. This is seen as the "Steal" or "St" value.' => 
       array (
         0 => '',
       ),
@@ -5329,11 +5477,23 @@ X-Crowdin-File-ID: 4
       array (
         0 => 'Összesen',
       ),
+      'Total Disk Space' => 
+      array (
+        0 => '',
+      ),
       'Total Listener Hours' => 
       array (
         0 => '',
       ),
+      'Total RAM' => 
+      array (
+        0 => '',
+      ),
       'Track Number' => 
+      array (
+        0 => '',
+      ),
+      'Transmitted' => 
       array (
         0 => '',
       ),
@@ -5425,6 +5585,10 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
+      'Unassigned Files' => 
+      array (
+        0 => '',
+      ),
       'Unique' => 
       array (
         0 => '',
@@ -5497,6 +5661,14 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
+      'Use' => 
+      array (
+        0 => '',
+      ),
+      'Use (Us)' => 
+      array (
+        0 => '',
+      ),
       'Use API keys to authenticate with the AzuraCast API using the same permissions as your user account.' => 
       array (
         0 => '',
@@ -5510,6 +5682,14 @@ X-Crowdin-File-ID: 4
         0 => 'A böngésző használata alapértelmezetten',
       ),
       'Use Icecast 2.4 on this server.' => 
+      array (
+        0 => '',
+      ),
+      'Use Less CPU (Uses More Memory)' => 
+      array (
+        0 => '',
+      ),
+      'Use Less Memory (Uses More CPU)' => 
       array (
         0 => '',
       ),
@@ -5538,6 +5718,10 @@ X-Crowdin-File-ID: 4
         0 => '',
       ),
       'Use the Telegram Bot API to send a message to a channel.' => 
+      array (
+        0 => '',
+      ),
+      'Used' => 
       array (
         0 => '',
       ),
@@ -5597,10 +5781,6 @@ X-Crowdin-File-ID: 4
       array (
         0 => '',
       ),
-      'Utilities' => 
-      array (
-        0 => 'Eszközök',
-      ),
       'Valid options: %s' => 
       array (
         0 => '',
@@ -5658,6 +5838,14 @@ X-Crowdin-File-ID: 4
         0 => '',
       ),
       'Volume' => 
+      array (
+        0 => '',
+      ),
+      'Wait' => 
+      array (
+        0 => '',
+      ),
+      'Wait (Wa)' => 
       array (
         0 => '',
       ),
@@ -5802,6 +5990,10 @@ X-Crowdin-File-ID: 4
         0 => '',
       ),
       'You are currently running version %s. Updating is highly recommended.' => 
+      array (
+        0 => '',
+      ),
+      'You are not permitted to submit requests.' => 
       array (
         0 => '',
       ),

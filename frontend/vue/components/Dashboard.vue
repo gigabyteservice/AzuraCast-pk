@@ -1,5 +1,5 @@
 <template>
-    <div id="dashboard">
+    <div id="dashboard" class="mylife2">
         <section class="card mb-4" role="region">
             <div class="card-header bg-primary-dark d-flex flex-wrap align-items-center">
                 <avatar class="flex-shrink-0 mr-3" v-if="user.avatar.url" :url="user.avatar.url"
