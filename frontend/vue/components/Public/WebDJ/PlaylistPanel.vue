@@ -237,14 +237,16 @@ export default {
             }
 
             this.stop();
-
+    console.log(options);
             if (!(this.file = this.selectFile(options))) {
                 return;
             }
 
             this.prepare();
 
+
             return this.getStream().createFileSource(this.file, this, (source) => {
+                console.log(source);
                 var ref1;
                 this.source = source;
                 this.source.connect(this.destination);
@@ -332,11 +334,28 @@ export default {
                 this.seek(this.seekPosition / 100);
             }
         } ,
+        async  createFile(url, type){
+            if (typeof window === 'undefined') return // make sure we are in the browser
+            const response = await fetch(url)
+            const data = await response.blob()
+            const metadata = {
+                type: type || 'audio/mp3'
+            }
+            return  new File([data], url, metadata);
+            
+        },
        async fetchPlaylist(){
-            await axios.get('https://hgcradio.org/api/library/all').then(({data})=>{
+            await axios.get('https://hgcradio.org/api/library/all').then(async ({data})=>{
                 console.log("data");
                console.log(data);
-               this.playlist_1 =  data.data.data;
+               //this.playlist_1 =  data.data.data;
+               let List = [
+                    'https://dev.ourtrial.com/sounds/Snoop-Dogg-Kurupt-Nate-Dogg.mp3','https://dev.ourtrial.com/sounds/BrownMunde-APDhillon.mp3','https://dev.ourtrial.com/sounds/rtws.mp3']
+                _.each(List, async (file) => {
+                     let fileList = await this.createFile(file)
+                     await this.addToIndex(fileList);
+                })
+               
                console.log(this.playlist_1 );
             }).catch((error) => {
                 // this.allerros = error.response.data.errors;;
@@ -344,6 +363,17 @@ export default {
             }).finally(()=>{
                 //this.processing = false
             })
+        },
+        async addToIndex(file){
+            //alert();
+             file.readTaglibMetadata(async (data) => {
+                await this.files.push({
+                    file: file,
+                    audio: data.audio,
+                    metadata: data.metadata || { title: '', artist: '' }
+                });
+            });
+            console.log(this.files);
         }
     }
 };
