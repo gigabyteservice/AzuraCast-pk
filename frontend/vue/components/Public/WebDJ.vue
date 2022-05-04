@@ -1,5 +1,7 @@
 <template>
     <section id="content" role="main" style="height: 100vh;">
+        
+      
         <div class="container pt-5">
             <div class="form-row">
                 <div class="col-md-4 mb-sm-4">
@@ -37,7 +39,7 @@ import MixerPanel from './WebDJ/MixerPanel.vue';
 import MicrophonePanel from './WebDJ/MicrophonePanel.vue';
 import PlaylistPanel from './WebDJ/PlaylistPanel.vue';
 import SettingsPanel from './WebDJ/SettingsPanel.vue';
-
+import playListCatModal from "../Account/playListCatModal.vue";
 import Stream from './WebDJ/Stream.js';
 
 export default {
@@ -50,12 +52,15 @@ export default {
         MixerPanel,
         MicrophonePanel,
         PlaylistPanel,
-        SettingsPanel
+        SettingsPanel,
+         playListCatModal,
     },
     props: {
         stationName: String,
         libUrls: Array,
-        baseUri: String
+        baseUri: String,
+        changePasswordUrl: String,
+
     },
     provide: function () {
         return {
@@ -71,7 +76,10 @@ export default {
         },
         resumeStream: function () {
             this.stream.resumeContext();
-        }
+        },
+        doChangePassword() {
+            this.$refs.playListCatModal.open();
+        },
     }
 };
 </script>

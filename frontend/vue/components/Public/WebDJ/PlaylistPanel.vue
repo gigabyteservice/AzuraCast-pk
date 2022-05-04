@@ -1,5 +1,8 @@
 <template>
+
     <div class="card">
+          <play-list-cat-modal ref="playListCatModal" :play-list-cat="playListCatModal"
+                                       @relist="relist"></play-list-cat-modal>
         <div class="card-header bg-primary-dark">
             <div class="d-flex align-items-center">
                 <div class="flex-fill text-nowrap">
@@ -65,6 +68,15 @@
                     </label>
                 </div>
             </div>
+            <div class="form-group mt-2">
+                <div class="custom-file">
+                    <label v-bind:for="id + '_loop'" class="custom-control-label">
+                        <b-button variant="outline-primary" @click.prevent="doChangePassword">
+                            <translate key="lang_btn_change_password">My playlist</translate>
+                        </b-button>
+                    </label>
+                </div>
+            </div>
 
             <div class="form-group mb-0">
                 <div class="controls">
@@ -81,6 +93,11 @@
                             <translate key="lang_repeat_playlist">Repeat</translate>
                         </label>
                     </div>
+                    <div class="custom-control custom-checkbox custom-control-inline">
+                        <!-- <input v-bind:id="id + '_loop'" type="checkbox" class="custom-control-input" v-model="loop"> -->
+                       
+                        <span v-if="loading">Please wait file load in process</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -93,7 +110,7 @@
                     <h5 class="mb-0">{{
                             rowFile.metadata.title ? rowFile.metadata.title : lang_unknown_title
                         }}</h5>
-                    <small class="pt-1">{{ rowFile.audio.length | prettifyTime }}</small>
+                    <small class="pt-1">{{ rowFile.audio != undefined ? rowFile.audio.length : '' | rowFile.audio != undefined ? prettifyTime : '' }}</small>
                 </div>
                 <p class="mb-0">{{ rowFile.metadata.artist ? rowFile.metadata.artist : lang_unknown_artist }}</p>
             </a>
@@ -119,16 +136,18 @@ import track from './Track.js';
 import _ from 'lodash';
 import Icon from '~/components/Common/Icon';
 import VolumeSlider from "~/components/Public/WebDJ/VolumeSlider";
+import playListCatModal from "../../Account/playListCatModal.vue";
 import axios from 'axios';
 
 export default {
-    components: {VolumeSlider, Icon},
+    components: {VolumeSlider, Icon,playListCatModal},
     extends: track,
     data() {
         return {
             'fileIndex': -1,
             'files': [],
             'playlist_1':[],
+            'loading':false,
 
             'volume': 100,
             'duration': 0.0,
@@ -169,7 +188,13 @@ export default {
 
         this.$root.$on('new-mixer-value', this.setMixGain);
         this.$root.$on('new-cue', this.onNewCue);
-        this.fetchPlaylist();
+        //this.fetchPlaylist();
+         this.$root.$on('fetch_file', (modalId) => {
+            // alert(modalId);
+            $('.close').click()
+
+             this.fetchSong(modalId);
+         })
     },
     filters: {
         prettifyTime (time) {
@@ -197,6 +222,9 @@ export default {
         }
     },
     methods: {
+        doChangePassword() {
+            this.$refs.playListCatModal.open();
+        },
         cue () {
             this.resumeStream();
             this.$root.$emit('new-cue', (this.passThrough) ? 'off' : this.id);
@@ -337,35 +365,77 @@ export default {
         async  createFile(url, type){
             if (typeof window === 'undefined') return // make sure we are in the browser
             const response = await fetch(url)
+            //  const response = await fetch(url, {
+            //     headers: {
+            //     'Access-Control-Allow-Origin' : '*',
+            //     'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+            //     },
+            //     method: 'GET', // *GET, POST, PUT, DELETE, etc.
+            //     mode: 'no-cors', // no-cors, *cors, same-origin
+            //   //  cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+            //    // credentials: 'same-origin', // include, *same-origin, omit
+            //     referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+               
+            // });
+               
             const data = await response.blob()
             const metadata = {
                 type: type || 'audio/mp3'
             }
-            return  new File([data], url, metadata);
+            return  await new File([data], url, metadata);
             
         },
+         async fetchSong(file){
+             this.loading = true;
+            let fileList = await this.createFile(file)
+            //let fileList = await this.createFile(file)
+            await this.addToIndex(fileList);
+         },
        async fetchPlaylist(){
-            await axios.get('https://hgcradio.org/api/library/all').then(async ({data})=>{
+           let List = [];
+            await axios.get('https://hgcradio.org/api/library/all',{
+               headers: {
+                'Access-Control-Allow-Origin' : '*',
+                'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+                },
+                withCredentials: false,
+                responseType: "json",  
+            }).then(async ({data})=>{
                 console.log("data");
-               console.log(data);
+                List = data.data.data;
+               console.log(data.data.data);
+              }).catch((error) => {
+            //     // this.allerros = error.response.data.errors;;
+            //     // this.success = false;
+             }).finally(()=>{
+            //     //this.processing = false
+             })
+               
+            //    let List = data.data.data;
+            //     console.log(List);
                //this.playlist_1 =  data.data.data;
-               let List = [
-                    'https://dev.ourtrial.com/sounds/Snoop-Dogg-Kurupt-Nate-Dogg.mp3','https://dev.ourtrial.com/sounds/BrownMunde-APDhillon.mp3','https://dev.ourtrial.com/sounds/rtws.mp3']
+                //let List = [
+                  //   'https://dev.ourtrial.com/sounds/Snoop-Dogg-Kurupt-Nate-Dogg.mp3','https://dev.ourtrial.com/sounds/BrownMunde-APDhillon.mp3','https://dev.ourtrial.com/sounds/rtws.mp3'];
+         //let List = ['https://recordings-video1.s3.ap-south-1.amazonaws.com/01-family-man.mp3']
                 _.each(List, async (file) => {
-                     let fileList = await this.createFile(file)
+                    console.log(file);
+                     let fileList = await this.createFile(file.file_url)
+                     //let fileList = await this.createFile(file)
                      await this.addToIndex(fileList);
                 })
                
-               console.log(this.playlist_1 );
-            }).catch((error) => {
-                // this.allerros = error.response.data.errors;;
-                // this.success = false;
-            }).finally(()=>{
-                //this.processing = false
-            })
+            //    console.log(this.playlist_1 );
+            // }).catch((error) => {
+            //     // this.allerros = error.response.data.errors;;
+            //     // this.success = false;
+            // }).finally(()=>{
+            //     //this.processing = false
+            // })
         },
         async addToIndex(file){
             //alert();
+            
+            
              file.readTaglibMetadata(async (data) => {
                 await this.files.push({
                     file: file,
@@ -373,6 +443,8 @@ export default {
                     metadata: data.metadata || { title: '', artist: '' }
                 });
             });
+            this.loading = false;
+
             console.log(this.files);
         }
     }
