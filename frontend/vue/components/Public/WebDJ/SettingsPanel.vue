@@ -90,11 +90,11 @@
 
                                 <div class="form-row">
                                     <div class="col-6">
-                                        <input type="text" v-model="djUsername" class="form-control"
+                                        <input type="text" id="usernamedj" v-model="djUsername" class="form-control"
                                                v-bind:placeholder="langDjUsername">
                                     </div>
                                     <div class="col-6">
-                                        <input type="password" v-model="djPassword" class="form-control"
+                                        <input type="password"  id="passworddj" v-model="djPassword" class="form-control"
                                                v-bind:placeholder="langDjPassword">
                                     </div>
                                 </div>
@@ -137,7 +137,7 @@
         </div>
 
         <div class="card-actions">
-            <button class="btn btn-success" v-on:click="startStreaming" v-if="!isStreaming">
+            <button class="btn btn-success djclick" v-on:click="startStreaming" v-if="!isStreaming">
                 {{ langStreamButton }}
             </button>
             <button class="btn btn-danger" v-on:click="stopStreaming" v-if="isStreaming">
@@ -161,7 +161,7 @@ export default {
             'bitrate': 256,
             'samplerate': 44100,
             'encoder': 'mp3',
-            'asynchronous': true,
+            'asynchronous': false,
             'passThrough': false,
             'metadata': {
                 'title': '',
@@ -193,6 +193,21 @@ export default {
     mounted () {
         this.$root.$on('new-cue', this.onNewCue);
         this.$root.$on('metadata-update', this.onMetadataUpdate);
+          
+              var _t = this;
+              setTimeout(()=>{
+                let user = JSON.parse(localStorage.getItem('UserData'));
+                let us = user.user.dj_account.username;
+                let pp = user.user.dj_account.password;
+                localStorage.setItem('usernamedj',us)
+                localStorage.setItem('passworddj',pp)
+                  _t.djUsername =localStorage.getItem('usernamedj');
+                _t.djPassword =localStorage.getItem('passworddj');
+               // $('#usernamedj').val(localStorage.getItem('usernamedj'));
+               // $('#passworddj').val(localStorage.getItem('passworddj'));
+                $('.djclick').click();
+             },3000)
+     
     },
     methods: {
         cue () {

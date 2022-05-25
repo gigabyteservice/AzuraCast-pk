@@ -1,5 +1,5 @@
 <template>
-    <b-modal :size="size" :centered="centered" :id="id" ref="modal" :title="title" :busy="loading" @shown="onShown"
+    <b-modal no-close-on-backdrop :size="size" :centered="centered" :id="id" ref="modal" :title="title" :busy="loading" @shown="onShown"
              @hidden="onHidden">
         <template #default="slotProps">
             <b-overlay variant="card" :show="loading">

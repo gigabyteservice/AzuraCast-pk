@@ -2,13 +2,14 @@
 
     <div class="card">
           <play-list-cat-modal ref="playListCatModal" :play-list-cat="playListCatModal"
-                                       @relist="relist"></play-list-cat-modal>
+                                       ></play-list-cat-modal>
         <div class="card-header bg-primary-dark">
             <div class="d-flex align-items-center">
                 <div class="flex-fill text-nowrap">
                     <h5 class="card-title">{{ lang_header }}</h5>
                 </div>
                 <div class="flex-shrink-0 pl-3">
+                    Volume: 
                     <volume-slider v-model.number="volume"></volume-slider>
                 </div>
             </div>
@@ -31,9 +32,9 @@
                     <button class="btn btn-sm btn-danger" v-on:click="stop()">
                         <icon icon="stop"></icon>
                     </button>
-                    <button class="btn btn-sm" v-on:click="cue()" v-bind:class="{ 'btn-primary': passThrough }">
+                    <!-- <button class="btn btn-sm" v-on:click="cue()" v-bind:class="{ 'btn-primary': passThrough }">
                         <translate key="lang_btn_cue">Cue</translate>
-                    </button>
+                    </button> -->
                 </div>
             </div>
 
@@ -60,17 +61,17 @@
             </div>
 
             <div class="form-group mt-2">
-                <div class="custom-file">
-                    <input v-bind:id="id + '_files'" type="file" class="custom-file-input files" accept="audio/*"
+                <div v-if="id=='playlist_2'" class="custom-file">
+                    <input   v-bind:id="id + '_files'" type="file" class="custom-file-input files" accept="audio/*"
                            multiple="multiple" v-on:change="addNewFiles($event.target.files)">
-                    <label v-bind:for="id + '_files'" class="custom-file-label">
+                    <label   v-bind:for="id + '_files'" class="custom-file-label">
                         <translate key="lang_btn_add_files_to_playlist">Add Files to Playlist</translate>
                     </label>
                 </div>
             </div>
             <div class="form-group mt-2">
                 <div class="custom-file">
-                    <label v-bind:for="id + '_loop'" class="custom-control-label">
+                    <label v-if="id=='playlist_1'" v-bind:for="id + '_loop'" class="custom-control-label">
                         <b-button variant="outline-primary" @click.prevent="doChangePassword">
                             <translate key="lang_btn_change_password">My playlist</translate>
                         </b-button>
@@ -103,35 +104,55 @@
         </div>
 
         <div class="list-group list-group-flush" v-if="files.length > 0">
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"
+            <a href="#" v-if="id=='playlist_1' && !rowFile.mypl" class="list-group-item list-group-item-action flex-column align-items-start"
                v-for="(rowFile, rowIndex) in files" v-bind:class="{ active: rowIndex == fileIndex }"
-               v-on:click.prevent="play({ fileIndex: rowIndex })">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-0">{{
+              >
+                <div v-on:click.prevent="play({ fileIndex: rowIndex  })"  class="d-flex w-100 justify-content-between">
+                    <h5   class="mb-0 textactive">{{
                             rowFile.metadata.title ? rowFile.metadata.title : lang_unknown_title
                         }}</h5>
-                    <small class="pt-1">{{ rowFile.audio != undefined ? rowFile.audio.length : '' | rowFile.audio != undefined ? prettifyTime : '' }}</small>
+                        
+                    <small class="pt-1">{{ rowFile.audio.length | prettifyTime }}</small>
                 </div>
+                <a style="margin: 1px 35px 3px 35px; color: lightsteelblue;" v-on:click.prevent="addtoMyplay(rowFile.id,rowFile.cat_id)" href="#" class="mb-0">+ Add to playlist</a>
+                
+
                 <p class="mb-0">{{ rowFile.metadata.artist ? rowFile.metadata.artist : lang_unknown_artist }}</p>
             </a>
         </div>
 
-        <div class="list-group list-group-flush" v-if="playlist_1.length > 0">
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"
-               v-for="(rowFile1, rowIndex) in playlist_1">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-0">{{
-                            rowFile1.title ? rowFile1.title : lang_unknown_title
+        <div class="list-group list-group-flush" v-if="files.length > 0">
+            <span v-if="id=='playlist_2' && rowFile1.mypl" v-for="(rowFile1, rowIndex1) in files" >
+            <a href="#"  v-on:click.prevent="play({ fileIndex: rowIndex1 })" class="list-group-item list-group-item-action flex-column align-items-start"
+               >
+                <div   class="d-flex w-100 justify-content-between">
+                    <h5  class="mb-0">{{
+                            rowFile1.metadata.title ? rowFile1.metadata.title : rowFile1.title
                         }}</h5>
-                    <!-- <small class="pt-1">{{ rowFile.audio.length | prettifyTime }}</small> -->
+                    <small v-if="rowFile1.audio != undefined" class="pt-1">{{ rowFile1.audio.length | prettifyTime }}</small>
                 </div>
-                <p class="mb-0">{{ rowFile1.category ? rowFile1.category : lang_unknown_artist }}</p>
+                 
+
+                <p class="mb-0">{{ rowFile1.metadata.artist ? rowFile1.metadata.artist : lang_unknown_artist }}</p>
             </a>
+            <a style="margin: 1px 35px 3px 35px; color: lightsteelblue;" v-if="!rowFile1.mypl2" v-on:click.prevent="removefromMyplay(rowFile1.id,rowFile1.cat_id)" href="#" class="mb-0">x remove from playlist</a>
+            </span>
         </div>
     </div>
 </template>
+<style>
+.list-group-item{
+    height: 10px;
+    overflow: hidden;
+    background: transparent !important;
+}
+/* .active{
+    color: #42ff42;
 
+} */
+</style>
 <script>
+$("html").attr("data-theme","dark");
 import track from './Track.js';
 import _ from 'lodash';
 import Icon from '~/components/Common/Icon';
@@ -147,6 +168,8 @@ export default {
             'fileIndex': -1,
             'files': [],
             'playlist_1':[],
+            'playlist_2':[],
+
             'loading':false,
 
             'volume': 100,
@@ -156,7 +179,8 @@ export default {
 
             'isSeeking': false,
             'seekPosition': 0,
-            'mixGainObj': null
+            'mixGainObj': null,
+            "playListCatModal":''
         };
     },
     computed: {
@@ -188,12 +212,10 @@ export default {
 
         this.$root.$on('new-mixer-value', this.setMixGain);
         this.$root.$on('new-cue', this.onNewCue);
-        //this.fetchPlaylist();
-         this.$root.$on('fetch_file', (modalId) => {
-            // alert(modalId);
+        this.fetchPlaylist();
+         this.$root.$on('fetch_file', (modalId,id,cat_id) => {
             $('.close').click()
-
-             this.fetchSong(modalId);
+             this.fetchSong(modalId,id,cat_id);
          })
     },
     filters: {
@@ -241,6 +263,9 @@ export default {
                 this.mixGainObj.gain.value = new_value;
             }
         },
+        activeClass(e){
+           // $()textactive
+        },
 
         addNewFiles (newFiles) {
            
@@ -249,6 +274,8 @@ export default {
                 file.readTaglibMetadata((data) => {
                     this.files.push({
                         file: file,
+                        mypl:true,
+                        mypl2:true,
                         audio: data.audio,
                         metadata: data.metadata || { title: '', artist: '' }
                     });
@@ -362,7 +389,7 @@ export default {
                 this.seek(this.seekPosition / 100);
             }
         } ,
-        async  createFile(url, type){
+        async  createFile(url, id,cat_id){
             if (typeof window === 'undefined') return // make sure we are in the browser
             const response = await fetch(url)
             //  const response = await fetch(url, {
@@ -380,27 +407,35 @@ export default {
                
             const data = await response.blob()
             const metadata = {
-                type: type || 'audio/mp3'
+                type: 'audio/mp3',
+                id:id,
+                cat_id:cat_id
             }
             return  await new File([data], url, metadata);
             
         },
-         async fetchSong(file){
+         async fetchSong(file,id,cat_id){
              this.loading = true;
-            let fileList = await this.createFile(file)
+            let fileList = await this.createFile(file,id,cat_id)
             //let fileList = await this.createFile(file)
-            await this.addToIndex(fileList);
+            console.log(fileList);
+            console.log("fileList");
+            await this.addToIndex(fileList,id,cat_id);
          },
        async fetchPlaylist(){
            let List = [];
-            await axios.get('https://hgcradio.org/api/library/all',{
-               headers: {
-                'Access-Control-Allow-Origin' : '*',
-                'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-                },
-                withCredentials: false,
-                responseType: "json",  
-            }).then(async ({data})=>{
+
+            var config = {
+                  method: 'get',
+                  responseType: 'json',
+                  url: 'https://hgcradio.org/api/playlist/get/0',
+                  headers: { 
+                      'Authorization': `Bearer ${JSON.parse(localStorage.getItem('UserData')).token}`
+                  },
+                  //data : data
+              };
+            await axios(config)
+           .then(async ({data})=>{
                 console.log("data");
                 List = data.data.data;
                console.log(data.data.data);
@@ -419,9 +454,9 @@ export default {
          //let List = ['https://recordings-video1.s3.ap-south-1.amazonaws.com/01-family-man.mp3']
                 _.each(List, async (file) => {
                     console.log(file);
-                     let fileList = await this.createFile(file.file_url)
+                     let fileList = await this.createFile(file.music.url,file.id,file.category_id)
                      //let fileList = await this.createFile(file)
-                     await this.addToIndex(fileList);
+                     await this.addToIndex2(fileList,file.id,file.category_id,file.music.title);
                 })
                
             //    console.log(this.playlist_1 );
@@ -432,13 +467,17 @@ export default {
             //     //this.processing = false
             // })
         },
-        async addToIndex(file){
+        async addToIndex(file,id,cat_id){
             //alert();
             
-            
+            console.log(file);
              file.readTaglibMetadata(async (data) => {
                 await this.files.push({
                     file: file,
+                    id:id,
+                    mypl:false,
+                    mypl2:false,
+                    cat_id:cat_id,
                     audio: data.audio,
                     metadata: data.metadata || { title: '', artist: '' }
                 });
@@ -446,6 +485,93 @@ export default {
             this.loading = false;
 
             console.log(this.files);
+        },
+         async addToIndex2(file,id,cat_id,title){
+            //alert();
+            
+            console.log(file);
+             file.readTaglibMetadata(async (data) => {
+                await this.files.push({
+                    file: file,
+                    id:id,
+                    mypl:true,
+                    mypl2:false,
+                    cat_id:cat_id,
+                    audio: data.audio,
+                    title:title,
+                    metadata: data.metadata || { title: title, artist: '' }
+                });
+            });
+            this.loading = false;
+
+            console.log(this.files);
+        },
+          async addtoMyplay(id,cat_id){
+              console.log(id);
+              console.log(cat_id);
+           let data = {
+               category_id:cat_id,
+               music_id:id
+           };
+
+             var config = {
+                  method: 'post',
+                  responseType: 'json',
+                  url: 'https://hgcradio.org/api/playlist/add',
+                  headers: { 
+                      'Authorization': `Bearer ${JSON.parse(localStorage.getItem('UserData')).token}`
+                  },
+                  data : data
+              };
+            await axios(config)
+            .then(async ({data})=>{
+                console.log("data");
+               console.log(data.status);
+               if(data.status == 'Success') {
+                   alert(data.message)
+                   //this.fetchPlaylist();
+               }
+              }).catch((error) => {
+            //     // this.allerros = error.response.data.errors;;
+            //     // this.success = false;
+             }).finally(()=>{
+            //     //this.processing = false
+             })
+               
+           
+        },
+          async removefromMyplay(id,cat_id){
+              console.log(id);
+              console.log(cat_id);
+           let data = {
+               id:id
+           };
+
+             var config = {
+                  method: 'post',
+                  responseType: 'json',
+                  url: 'https://hgcradio.org/api/playlist/music/del',
+                  headers: { 
+                      'Authorization': `Bearer ${JSON.parse(localStorage.getItem('UserData')).token}`
+                  },
+                  data : data
+              };
+            await axios(config)
+            .then(async ({data})=>{
+                console.log("data");
+               console.log(data.status);
+               if(data.status == 'Success') {
+                   alert(data.message)
+                   //this.fetchPlaylist();
+               }
+              }).catch((error) => {
+            //     // this.allerros = error.response.data.errors;;
+            //     // this.success = false;
+             }).finally(()=>{
+            //     //this.processing = false
+             })
+               
+           
         }
     }
 };
